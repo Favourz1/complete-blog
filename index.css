@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=B612:ital,wght@0,400;0,700;1,400;1,700&family=Cedarville+Cursive&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.body{
+ font-size: 14px;
+ font-family: 'B612', sans-serif;
+ /* font-family: 'Cedarville Cursive', cursive; */
+}
+
+
+@layer base {
+    .container-layout{
+        @apply container mx-auto px-6
+    }
+    .nav-wrapper{
+        @apply  flex justify-between w-full;
+    }
+
+    .nav-link{
+        @apply flex text-3xl;
+        font-family: 'Cedarville Cursive';
+    }
+}

@@ -7,6 +7,23 @@
     <title>Complete Blog</title>
 </head>
 <body>
-    <h1 class="text-blue-600 text-4xl">Hello world</h1>
+    <%- include("components/header.ejs") %>
+    
+    <h1 class="text-4xl text-semibold text-center">Articles</h1>
+    <main class="container-layout my-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+        <% if(locals.posts){ %>
+                <% posts.map((item) =>{ %>
+                    <a href="posts/<%= item.slug %>" class=" flex p-4 gap-4 items-center justify-between bg-slate-300 shadow-lg rounded-lg">
+                       <div class="flex flex-col justify-between max-w-[60%]">
+                            <p class="bg-slate-500 text-slate-200 text-xs px-2 py-1 rounded-lg max-w-max"><%= item.category %></p> 
+                            <div class="text-slate-800 font-medium text-3xl"><%= item.title %></div> 
+                       </div>
+                       <div>
+                         <img class="rounded-full object-cover h-[60px] w-[60px]" src="<%= item.photo %>" alt="">
+                       </div>
+                    </a>
+               <% }) %>
+        <% } %>
+    </main>
 </body>
 </html>
